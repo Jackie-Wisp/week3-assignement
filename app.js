@@ -16,16 +16,18 @@ const shopUpgradesArray = [];
 const upgradesContainer = document.getElementById("upgrade-shop-container");
 // https://cookie-upgrade-api.vercel.app/api/upgrades
 async function getShopUpgrades() {
-  const result = await fetch(
+  const response = await fetch(
     "https://cookie-upgrade-api.vercel.app/api/upgrades"
   );
-  // We now need to translate the data we recieve from JSON to something we can use!
-  //   const data = await [FINISH THIS CODE]
-  //   return [FINISH THIS CODE]
+  const data = await response.json();
+  console.log(data);
+ return shopUpgradesArray;
+ 
 
   //We need to *PUSH* the upgrade times that we got from our fetch, into our empty array!
   //Remember that the upgrades that we fetched will be known by a variable name that you have set on line 30/31 ^
 }
+console.log(shopUpgradesArray)
 
 async function renderShopUpgrades() {
   const getShopItems = await getShopUpgrades();
