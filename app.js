@@ -20,7 +20,7 @@ async function getShopUpgrades() {
     "https://cookie-upgrade-api.vercel.app/api/upgrades"
   );
   const data = await response.json();
-  console.log(data);
+  shopUpgradesArray.push(...data);
  return shopUpgradesArray;
  
 
